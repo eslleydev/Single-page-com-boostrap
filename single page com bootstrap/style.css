@@ -1,0 +1,128 @@
+body {
+    background: #fff;
+    padding-top: 3.75rem;
+    font-family: "Open Sans";
+    color: #333;
+}
+
+#logo {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.card {
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.card a {
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.card a::before {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0.35rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+}
+
+.card a::after {
+    border-radius: .35rem;
+    border: 2px solid rgba(255, 255, 255, .5);
+    color: #fff;
+    content: 'view';
+    display: inline-block;
+    font-size: 1em;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    margin: -1.25em 0 0 -3em;
+    opacity: 0;
+    padding: 0 1.5em;
+    text-align: center;
+    transition: .5s;
+    line-height: 2.25em;
+    letter-spacing: 2px;
+}
+
+.card a:hover::before, .card a:hover::after {
+    opacity: 1;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    
+    color: #fff;  
+    margin: 0 20px;    
+}
+
+.footer a {
+    color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        padding-top: 0;
+        padding-left: 33.33%;
+    }
+    
+    #sideNav {
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 33.33%;
+        height: 100vh;
+        background-image: url(bg.jpg), url(overlay.png);
+        background-position: top left;
+        background-repeat: repeat, no-repeat;
+        background-attachment: scroll;
+        background-size: auto, cover;
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        font-size: 1.3em;
+    }   
+    
+    .img-profile {
+        max-width: 60%;
+        max-height: auto;
+        margin: 2rem auto;        
+    }
+    #sideNav .navbar-collapse{
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: auto;
+    }
+
+    #sideNav .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 1rem;
+        left: 0;
+        width: 30%;
+        background-color: transparent;
+        z-index: 1031;
+    }
+}
